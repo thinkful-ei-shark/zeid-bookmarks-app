@@ -2,16 +2,19 @@
 import $ from 'jquery';
 import cuid from 'cuid';
 
-import './index.css';
+import './style.css';
 
 import app from './app';
+import api from './api';
+import store from './store';
+
+
 
 
 
 
 const main = function () {
-  app.bindEventListeners();
-  app.render();
+
 };
 
 $(main);
