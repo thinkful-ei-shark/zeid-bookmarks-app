@@ -1,5 +1,5 @@
 
-const BASE_URL = 'https://thinkful-list-api.herokuapp.com/zeiddiez';
+const BASE_URL = '  GET https://thinkful-list-api.herokuapp.com/zeiddiez/bookmarks';
 
 
 

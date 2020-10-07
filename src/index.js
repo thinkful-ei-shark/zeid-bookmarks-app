@@ -14,7 +14,7 @@ import store from './store';
 
 
 const main = function () {
-
+    
 };
 
 $(main);
