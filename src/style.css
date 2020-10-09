@@ -101,6 +101,10 @@ label {
     padding: 1px;
 }
 
+.ind-bookmark {
+    display: flex
+}
+
 @media all and (min-width: 850px) {
   header {
     background-repeat: repeat;
