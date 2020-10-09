@@ -1,20 +1,20 @@
 'use strict';
-import $ from 'jquery';
-import cuid from 'cuid';
 
-import './style.css';
+import $ from "jquery";
+import api from "./api";
+import style from "./style.css"
+import store from "./store";
+import cuid from "cuid"
 
-import app from './app';
-import api from './api';
-import store from './store';
+import app from "./app";
 
-
-
-
-
-
-const main = function () {
-    
-};
+function main() {
+  api.getBookmarks().then((items) => {
+    items.forEach((item) => store.addItem(item));
+    app.render();
+  });
+  app.render();
+  app.bindEventListeners();
+}
 
 $(main);

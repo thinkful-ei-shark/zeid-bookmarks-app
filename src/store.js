@@ -1,30 +1,34 @@
-'use strict';
-import cuid from 'cuid'
+const store = {
+  bookmarks: [],
+  adding: false,
+  error: null,
+  filter: 0,
+};
 
-const store = { bookmarks: [
-                  {
-                    id: 'x56w',
-                    title: 'Title 1',
-                    rating: 3,
-                    url: 'http://www.title1.com',
-                    desc: 'lorem ipsum dolor sit',
-                    expanded: false
-                  },
-                  {
-                    id: '6ffw',
-                    title: 'Title 2',
-                    rating: 5,
-                    url: 'http://www.title2.com',
-                    desc: 'dolorum tempore deserunt',
-                    expanded: false
-                  } 
-                ],
-                adding: false,
-                error: null,
-                filter: 0
-              };
+const addItem = function (item) {
+  this.store.bookmarks.push(item);
+};
 
+const findById = function (id) {
+  return this.store.bookmarks.find((currentItem) => currentItem.id === id);
+};
+
+const findAndDelete = function (id) {
+  this.store.bookmarks = this.store.bookmarks.filter(
+    id => id.id !== id
+  );
+};
+
+function filterResults(stars) {
+  this.store.filter = this.store.bookmarks.filter(
+    stars => stars.rating >= this.store.filter
+  );
+}
 
 export default {
-
-}
+  store,
+  addItem,
+  findAndDelete,
+  findById,
+  filterResults,
+};
