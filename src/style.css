@@ -38,7 +38,7 @@ header {
     /* background-image: url("jojopattern.jpg"); */
     background-repeat: no-repeat;
     border: 7px solid black;
-    text-shadow: 5px 5px 5px rgb(204, 0, 255);
+    /* text-shadow: 5px 5px 5px rgb(204, 0, 255); */
     color: #ffffff;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
@@ -103,6 +103,15 @@ label {
 
 .ind-bookmark {
     display: flex
+}
+
+a:visited {
+  color:lightgray;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 @media all and (min-width: 850px) {
