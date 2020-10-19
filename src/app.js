@@ -30,7 +30,8 @@ function startPage() {
 }
 
 function generateBookmarkItem(bookmark) {
-  const bookmarkItem = `<li class="ind-bookmark" data-item-id="${bookmark.id}"><div class="top-row group"
+  const bookmarkItem = `<ul>
+  <li class="ind-bookmark" data-item-id="${bookmark.id}"><div class="top-row group"
     <div>
     <span class ="item" >${bookmark.title}</span>
       <p class = "item">${bookmark.rating}</p>
@@ -41,7 +42,8 @@ function generateBookmarkItem(bookmark) {
       <p>${bookmark.desc}</p>
       <button type = "submit" class ="btn "id="delete">Delete</button>
       </div>
-    </li>`;
+    </li>
+    </ul>`;
   return bookmarkItem;
 }
 
