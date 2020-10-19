@@ -68,6 +68,7 @@ function generateAddPage() {
 <form id ="add-bookmark-form">
 <div class="item-column"
 <br>
+<label for="url">URL</label>
   <input type ="text" id="url" name="url" placeholder="Place URL here" required>
 </div> 
 <div class="item-column">
