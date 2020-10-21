@@ -31,15 +31,16 @@ function startPage() {
 
 function generateBookmarkItem(bookmark) {
   const bookmarkItem = `
-  <li class="ind-bookmark" data-item-id="${bookmark.id}" tabindex="0"><div class="top-row group"
-    <div>
-    <span class ="item" >${bookmark.title}</span>
+  <label for="${bookmark.id}"></label>
+  <li name="${bookmark.id} class="ind-bookmark" data-item-id="${bookmark.id}" tabindex="0">
+    <div class="top-row group">
+    <span class ="item" > <h2>${bookmark.title} </h2></span>
       <p class = "item">${bookmark.rating}</p>
       </div>
       </div>
       <div class="bottom-row hidden">
       <a href ="${bookmark.url}">Visit Site</a>
-      <p>${bookmark.desc}</p>
+      <h2>${bookmark.desc}</h2>
       <button type = "submit" class ="btn "id="delete">Delete</button>
       </div>
     </li>
@@ -98,10 +99,27 @@ function getIdFromElement(item) {
 }
 
 function handleExpandButton() {
-  $('main').on('click', 'li', function (e) {
+  $('main').on('click keypress', 'li', function (e) {
     $(this).children('.bottom-row').toggleClass('hidden');
+  // $(`main`).on('click', 'li', function (e) {
+  //   $(this).children('.bottom-row').toggleClass('hidden')
+  // } );
+
+    
   });
 }
+
+// function handleExpandButton() {   
+//   $('main').on('click', 'li', () => {   
+//     $(this).children('.bottom-row').toggleClass('hidden');
+//             });        
+            
+            
+//     $('main').on('keypress', 'li', () => {   
+//       $(this).children('.bottom-row').toggleClass('hidden');
+//           });  
+        
+//         };
 
 function handleDeleteButton() {
   $('main').on('click', '#delete', function (e) {
@@ -138,11 +156,31 @@ function handleBookmarkSubmit() {
     let desc = $('#desc').val();
     api.postBookmark(name, urlName, rating, desc).then((data) => {
       store.addItem(data);
+      if (data.message) {
+        let err = ` <p>${data.message}</p>`
+        $(`#errors`).html(err);
+        // etc
+        
+        }
+      console.log(data);
       store.store.adding = false;
       render();
     });
   });
 }
+
+const showError = function(message){   
+   let err = `    <div>    <p>${message}</p>    </div>`;   
+    $(`#errors`).html(err); 
+    };      
+     function clearError(){  
+         $(`#errors-div`).html(``);  
+         }
+
+
+
+
+
 
 function render() {
   let bookmarksCall = filterBookmarks(store.store.bookmarks);

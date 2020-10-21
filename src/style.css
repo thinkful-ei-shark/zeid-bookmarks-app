@@ -7,6 +7,15 @@
   padding: 50px;
 }
 
+#errors {
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(144, 50, 163);
+  border: 1px solid black;
+  color: #ffffff;
+  }
+
 .item {
   margin: 10px;
 }
@@ -29,7 +38,7 @@ body {
 }
 
 header {
-    font-size: 36px;
+    font-size: 28px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,7 +70,7 @@ h1 {
 }
 
 li {
-  font-size: 32px;
+  font-size: 28px;
 
   background-color: rgb(144, 50, 163);
   border: 7px solid black;
@@ -114,9 +123,11 @@ html, body {
   overflow-x: hidden;
 }
 
+
+
 @media all and (min-width: 850px) {
   header {
-    font-size: 18px;
+    font-size: 12px;
     background-repeat: repeat;
     display: flex;
     justify-content: center;
