@@ -116,6 +116,7 @@ html, body {
 
 @media all and (min-width: 850px) {
   header {
+    font-size: 18px;
     background-repeat: repeat;
     display: flex;
     justify-content: center;
