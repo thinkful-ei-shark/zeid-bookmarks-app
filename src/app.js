@@ -31,16 +31,18 @@ function startPage() {
 
 function generateBookmarkItem(bookmark) {
   const bookmarkItem = `
-  <label for="${bookmark.id}"></label>
   <li name="${bookmark.id} class="ind-bookmark" data-item-id="${bookmark.id}" tabindex="0">
     <div class="top-row group">
-    <span class ="item" > <h2>${bookmark.title} </h2></span>
-      <p class = "item">${bookmark.rating}</p>
+    <span class ="item" > <h2>Title: ${bookmark.title}   </h2></span>
+    <br />
+      <span class = "item">   Rating: ${bookmark.rating}</span>
       </div>
       </div>
       <div class="bottom-row hidden">
       <a href ="${bookmark.url}">Visit Site</a>
-      <h2>${bookmark.desc}</h2>
+      <br />
+      <p>${bookmark.desc}</p>
+      <br>
       <button type = "submit" class ="btn "id="delete">Delete</button>
       </div>
     </li>
