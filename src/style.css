@@ -17,6 +17,8 @@
   }
 a {
   color: rgb(217, 255, 0);
+  justify-content: center;
+  align-items: center;
 }
 a:visited {
     color:lightgray;
@@ -57,7 +59,8 @@ header {
     border: 7px solid black;
     text-shadow: 5px 5px 5px rgb(255, 0, 0);
     color: #ffffff;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    justify-content: center;
+    align-items: center;
 }
 
 /* .ind-bookmark {
@@ -92,6 +95,12 @@ li {
   list-style-type: none;
   flex-direction: column;
 
+}
+.top-row {
+  padding: 25px;
+}
+.bottom-row {
+  padding: 25px;
 }
 
 /* .bookmarkButton {
@@ -131,17 +140,19 @@ html, body {
 
 
 
-@media all and (min-width: 850px) {
+@media all and (min-width: 600px) {
   header {
     font-size: 22px;
     background-repeat: repeat;
     display: flex;
-    justify-content: center;  
+    justify-content: center;
     align-items: center;
   }
 
     h1 {
       font-size: 22px;
+      justify-content: center;
+      align-items: center;
   }
 
 }
