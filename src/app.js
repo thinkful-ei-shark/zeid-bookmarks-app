@@ -33,9 +33,9 @@ function generateBookmarkItem(bookmark) {
   const bookmarkItem = `
   <li class="ind-bookmark" data-item-id="${bookmark.id}" tabindex="0">
     <div class="top-row group">
-    <span class ="item" > <h2>Title: ${bookmark.title}   </h2></span>
+    <span class ="item" > <h2 style="padding: 50px 50px;">Title: ${bookmark.title}   </h2></span>
     <br />
-      <span class = "item">   Rating: ${bookmark.rating}</span>
+      <span style="padding: 50px 50px;" class = "item">   Rating: ${bookmark.rating}</span>
       </div>
       <div class="bottom-row hidden">
       <a href="${bookmark.url}">Visit Site</a>
